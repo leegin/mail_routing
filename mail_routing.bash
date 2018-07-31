@@ -11,8 +11,8 @@ spamming=no
 #Get the IP address of the server.
 HOST=$(hostname -i)
 
-#Use the API of RBLmon to check the RBLs in which the server IP address is listed.
-curl "https://rblmon.india.endurance.com/api/checkip?ip=$HOST&key=Bf8jAyMzq2mc3C7AXVY2" | cut -d"}" -f1 > /root/mail_routing_check
+#Use the API to check the RBLs in which the server IP address is listed.
+curl "<API you use to get the detals of the RBLs>" > /root/mail_routing_check
 
 #Function to check if the server is already routed via outbound server. If yes then check the score and if it is 100% clean remove it from routing.
 cleanip()
